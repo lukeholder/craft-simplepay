@@ -55,7 +55,7 @@ class ResultService extends Component
 
     public function setFlash()
     {
-        $error = !($this->notification['e'] === 'SUCCESS') ? 'error' : 'notice';
+        $error = !($this->isSuccessful()) ? 'error' : 'notice';
 
         Craft::$app->session->setFlash($error, $this->getMessage());
     }
