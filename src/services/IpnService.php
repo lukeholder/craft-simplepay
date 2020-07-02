@@ -29,6 +29,7 @@ class IpnService extends Component
      * @param Request $request
      *
      * @return string
+     * @throws \yii\base\InvalidConfigException
      */
     public static function getResponse(Request $request) : string
     {
