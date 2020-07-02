@@ -1,0 +1,71 @@
+{#
+/**
+ * Simplepay plugin for Craft Commerce
+ *
+ * Simplepay for Craft Commerce Settings.twig
+ *
+ * @author    Ottó Radics
+ * @copyright Copyright (c) 2019 Ottó Radics
+ * @link      https://www.webmenedzser.hu
+ * @package   CraftSimplepay
+ * @since     1.0.0
+ */
+#}
+
+{% from "_includes/forms" import autosuggestField %}
+
+<h2>
+    Return URLs
+</h2>
+
+{{ autosuggestField({
+    label: 'Success URL' | t('craft-simplepay'),
+    instructions: '' | t('craft-simplepay'),
+    id: 'successUrl',
+    class: 'ltr',
+    name: 'successUrl',
+    value: settings.successUrl,
+    suggestEnvVars: true,
+    suggestAliases: true,
+    errors: settings.getErrors('successUrl'),
+    required: true
+}) }}
+
+{{ autosuggestField({
+    label: 'Fail URL' | t('craft-simplepay'),
+    instructions: '' | t('craft-simplepay'),
+    id: 'failUrl',
+    class: 'ltr',
+    name: 'failUrl',
+    value: settings.failUrl,
+    suggestEnvVars: true,
+    suggestAliases: true,
+    errors: settings.getErrors('failUrl'),
+    required: true
+}) }}
+
+{{ autosuggestField({
+    label: 'Cancel URL' | t('craft-simplepay'),
+    instructions: '' | t('craft-simplepay'),
+    id: 'cancelUrl',
+    class: 'ltr',
+    name: 'cancelUrl',
+    value: settings.cancelUrl,
+    suggestEnvVars: true,
+    suggestAliases: true,
+    errors: settings.getErrors('cancelUrl'),
+    required: true
+}) }}
+
+{{ autosuggestField({
+    label: 'Timeout URL' | t('craft-simplepay'),
+    instructions: '' | t('craft-simplepay'),
+    id: 'timeoutUrl',
+    class: 'ltr',
+    name: 'timeoutUrl',
+    value: settings.timeoutUrl,
+    suggestEnvVars: true,
+    suggestAliases: true,
+    errors: settings.getErrors('timeoutUrl'),
+    required: true
+}) }}

@@ -1,0 +1,47 @@
+{
+    "name": "webmenedzser/craft-simplepay",
+    "description": "SimplePay payment gateway for Craft Commerce",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+      "craft",
+      "cms",
+      "craftcms",
+      "craft-plugin",
+      "commerce",
+      "simplepay",
+      "craftcommerce",
+      "craft simplepay"
+    ],
+    "support": {
+        "docs": "https://github.com/webmenedzser/craft-simplepay/craft-simplepay/blob/master/README.md",
+        "issues": "https://github.com/webmenedzser/craft-simplepay/craft-simplepay/issues"
+    },
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Ottó Radics",
+            "homepage": "https://www.webmenedzser.hu"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "craftcms/commerce": "^3.0",
+        "craftcms/commerce-omnipay": "^2.0.0",
+        "league/omnipay": "^3.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "webmenedzser\\craftsimplepay\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "OTP SimplePay for Craft Commerce",
+        "handle": "craft-simplepay",
+        "developer": "Ottó Radics",
+        "developerUrl": "https://www.webmenedzser.hu",
+        "documentationUrl": "https://github.com/webmenedzser/craft-simplepay/craft-simplepay/blob/master/README.md",
+        "changelogUrl": "https://raw.githubusercontent.com/webmenedzser/craft-simplepay/craft-simplepay/master/CHANGELOG.md",
+        "class": "webmenedzser\\craftsimplepay\\CraftSimplepay"
+    }
+}

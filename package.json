@@ -1,0 +1,36 @@
+{
+  "name": "craft-simplepay",
+  "description": "SimplePay payment gateway for Craft Commerce",
+  "version": "1.0.0",
+  "keywords": [
+    "craft",
+    "cms",
+    "craftcms",
+    "craft-plugin",
+    "commerce",
+    "simplepay",
+    "craftcommerce",
+    "craft simplepay"
+  ],
+  "author": [
+    {
+      "name": "dr. Otto Radics",
+      "email": "otto@webmenedzser.hu",
+      "url": "https://www.webmenedzser.hu"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webmenedzser/craft-simplepay.git"
+  },
+  "scripts": {
+    "changelog": "auto-changelog -p",
+    "version": "npm run replace-version && npm run changelog && git add -A",
+    "postversion": "git push && git push --tags",
+    "replace-version": "replace-in-file --configFile ./.replace-in-file.config.js"
+  },
+  "devDependencies": {
+    "auto-changelog": "^1.16.4",
+    "replace-in-file": "^4.2.0"
+  }
+}

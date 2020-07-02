@@ -1,0 +1,57 @@
+{#
+/**
+ * Simplepay plugin for Craft Commerce
+ *
+ * Simplepay for Craft Commerce Settings.twig
+ *
+ * @author    Ottó Radics
+ * @copyright Copyright (c) 2019 Ottó Radics
+ * @link      https://www.webmenedzser.hu
+ * @package   CraftSimplepay
+ * @since     1.0.0
+ */
+#}
+
+{% from "_includes/forms" import textField, lightswitchField, autosuggestField, selectField %}
+
+{{ autosuggestField({
+    label: 'Merchant ID' | t('craft-simplepay'),
+    instructions: '' | t('craft-simplepay'),
+    id: 'merchant',
+    class: 'ltr',
+    name: 'merchant',
+    value: gateway.merchant,
+    suggestEnvVars: true,
+    suggestAliases: true,
+    errors: gateway.getErrors('merchant'),
+    required: true
+}) }}
+
+{{ autosuggestField({
+    label: 'Secret Key' | t('craft-simplepay'),
+    instructions: '' | t('craft-simplepay'),
+    id: 'secretKey',
+    class: 'ltr',
+    name: 'secretKey',
+    value: gateway.secretKey,
+    suggestEnvVars: true,
+    suggestAliases: true,
+    errors: gateway.getErrors('secretKey'),
+    required: true
+}) }}
+
+{{ selectField({
+    label: 'Currency' | t('craft-simplepay'),
+    instructions: '' | t('craft-simplepay'),
+    id: 'currency',
+    class: 'ltr',
+    name: 'currency',
+    value: gateway.currency,
+    errors: gateway.getErrors('currency'),
+    options: {
+        'HUF': 'HUF',
+        'EUR': 'EUR',
+        'USD': 'USD'
+    },
+    required: true
+}) }}
