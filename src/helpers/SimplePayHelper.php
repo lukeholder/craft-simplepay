@@ -32,20 +32,13 @@ class SimplePayHelper extends Component
     public static function getOrderByOrderRef(string $orderRef)
     {
         /**
-         * Random string is appended to order nr. before redirecting to offsite
-         * payment gateway. Order nr. in Craft Commerce consists of 32 characters.
-         * We should trim the characters to the first 32.
-         */
-        $orderNumber = substr($orderRef, 0, 32);
-
-        /**
          * Get order by number
          *
          * @var Order $order
          */
         $order = Commerce::getInstance()
             ->getOrders()
-            ->getOrderByNumber($orderNumber);
+            ->getOrderByNumber($orderRef);
 
         if (!$order) {
             throw new \Exception('Order not found.');

@@ -105,7 +105,7 @@ class Gateway extends OffsiteGateway
             throw new \Exception('The cart is empty.');
         }
 
-        $orderRef = $cart->number . random_int(100000, 999999);
+        $orderRef = $cart->number;
 
         $gateway->setMerchant(Craft::parseEnv($this->merchant));
         $gateway->setSecretKey(Craft::parseEnv($this->secretKey));
