@@ -14,8 +14,8 @@
       "craft simplepay"
     ],
     "support": {
-        "docs": "https://github.com/webmenedzser/craft-simplepay/craft-simplepay/blob/master/README.md",
-        "issues": "https://github.com/webmenedzser/craft-simplepay/craft-simplepay/issues"
+        "docs": "https://github.com/webmenedzser/craft-simplepay/blob/master/README.md",
+        "issues": "https://github.com/webmenedzser/craft-simplepay/issues"
     },
     "license": "proprietary",
     "authors": [
@@ -40,8 +40,8 @@
         "handle": "craft-simplepay",
         "developer": "Ottó Radics",
         "developerUrl": "https://www.webmenedzser.hu",
-        "documentationUrl": "https://github.com/webmenedzser/craft-simplepay/craft-simplepay/blob/master/README.md",
-        "changelogUrl": "https://raw.githubusercontent.com/webmenedzser/craft-simplepay/craft-simplepay/master/CHANGELOG.md",
+        "documentationUrl": "https://github.com/webmenedzser/craft-simplepay/blob/master/README.md",
+        "changelogUrl": "https://raw.githubusercontent.com/webmenedzser/craft-simplepay/master/CHANGELOG.md",
         "class": "webmenedzser\\craftsimplepay\\CraftSimplepay"
     }
 }
