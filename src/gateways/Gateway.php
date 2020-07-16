@@ -1,20 +1,24 @@
 <?php
+/**
+ * Simplepay for Craft Commerce
+ *
+ * SimplePay payment gateway for Craft Commerce
+ *
+ * @link      https://www.webmenedzser.hu
+ * @copyright Copyright (c) 2020 Ottó Radics
+ */
 
 namespace webmenedzser\craftsimplepay\gateways;
 
+use webmenedzser\craftsimplepay\CraftSimplepay;
 use webmenedzser\craftsimplepay\helpers\TemplateHelper;
 use webmenedzser\craftsimplepay\services\simplepay\Gateway as OmnipayGateway;
 use webmenedzser\craftsimplepay\services\IpnService;
 
 use Craft;
-use craft\commerce\base\RequestResponseInterface;
-use craft\commerce\models\payments\BasePaymentForm;
-use craft\commerce\models\Transaction;
 use craft\commerce\Plugin as Commerce;
 use craft\commerce\omnipay\base\OffsiteGateway;
 use craft\helpers\UrlHelper;
-use craft\helpers\Json;
-use craft\web\Response;
 
 use Omnipay\Common\AbstractGateway;
 
@@ -109,7 +113,7 @@ class Gateway extends OffsiteGateway
 
         $gateway->setMerchant(Craft::parseEnv($this->merchant));
         $gateway->setSecretKey(Craft::parseEnv($this->secretKey));
-        $gateway->setTestMode(Craft::$app->config->general->devMode);
+        $gateway->setTestMode(CraftSimplepay::getInstance()->getSettings()->testMode);
         $gateway->setCurrency($this->currency);
         $gateway->setOrderRef($orderRef);
         $gateway->setCustomerEmail($cart->customer->email);
@@ -118,6 +122,8 @@ class Gateway extends OffsiteGateway
         $gateway->setUrl(UrlHelper::actionUrl(
             'craft-simplepay/back?orderRef=' . $orderRef
         ));
+
+        Craft::info(print_r($gateway->getTestMode(), true), __METHOD__);
 
         return $gateway;
     }

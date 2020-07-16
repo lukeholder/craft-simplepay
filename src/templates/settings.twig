@@ -12,11 +12,19 @@
  */
 #}
 
-{% from "_includes/forms" import autosuggestField %}
+{% from "_includes/forms" import autosuggestField, lightswitchField %}
 
-<h2>
+{{ lightswitchField({
+    'label': 'Test mode enabled' | t('craft-simplepay'),
+    'instructions': 'This toggles between sandbox and live SimplePay environments. Turn it off to use the production environment.' | t('craft-simplepay'),
+    'id': 'testMode',
+    'name': 'testMode',
+    'on': settings.testMode,
+}) }}
+
+<h3>
     Return URLs
-</h2>
+</h3>
 
 {{ autosuggestField({
     label: 'Success URL' | t('craft-simplepay'),
