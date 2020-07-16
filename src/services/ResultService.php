@@ -1,4 +1,12 @@
 <?php
+/**
+ * Simplepay for Craft Commerce
+ *
+ * SimplePay payment gateway for Craft Commerce
+ *
+ * @link      https://www.webmenedzser.hu
+ * @copyright Copyright (c) 2020 Ottó Radics
+ */
 
 namespace webmenedzser\craftsimplepay\services;
 
